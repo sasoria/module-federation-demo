@@ -44,6 +44,7 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         app_a: "app_a@http://localhost:8100/remoteEntry.js",
+        app_b: "app_b@http://localhost:8200/remoteEntry.js",
       },
       exposes: {},
       shared: {
