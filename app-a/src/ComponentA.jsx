@@ -2,7 +2,7 @@ import React from "react";
 
 const ComponentA = () => (
   <div className="container">
-    <button>App-a</button>
+    <p>Component-a</p>
   </div>
 );
 
