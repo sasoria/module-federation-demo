@@ -1,15 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ComponentA from "app_a/ComponentA";
-import ComponentB from "app_b/ComponentB";
-
 import "./index.css";
+
+const ComponentA = React.lazy(() => import("app_a/ComponentA"));
+const ComponentB = React.lazy(() => import("app_b/ComponentB"));
 
 const App = () => (
   <div className="container">
     <div>Name: shell</div>
-    <ComponentA />
-    <ComponentB />
+    <React.Suspense fallback="Loading...">
+      <ComponentA />
+    </React.Suspense>
+    <React.Suspense fallback="Loading...">
+      <ComponentB />
+    </React.Suspense>
   </div>
 );
+
 ReactDOM.render(<App />, document.getElementById("app"));
